@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Environmental Science Slides</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; font-family: Arial, sans-serif; overflow: hidden; background: #fff; }
+
+  /* Logo */
+  .logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    z-index: 10;
+  }
+
+  /* Slider container */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* full viewport height */
+    overflow: hidden;
+  }
+
+  /* Slides */
+  .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding: 20px;
+  }
+
+  .slide img {
+    max-width: 90%;
+    max-height: 70%; /* bigger image */
+    border-radius: 10px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .caption {
+    font-size: 1.2rem;
+    max-width: 80%;
+    line-height: 1.5;
+  }
+
+  /* Active slide */
+  .slide.active {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  /* Navigation buttons */
+  .nav-buttons {
+    position: absolute;
+    bottom: 30px; /* smaller footer */
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+  }
+
+  .nav-buttons button {
+    padding: 6px 10px;
+    margin: 0 5px;
+    border: none;
+    background: rgba(0,123,255,0.8);
+    color: #fff;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .nav-buttons button:hover {
+    background: rgba(0,123,255,1);
+  }
+
+  /* Dot indicators */
+  .dots {
+    position: absolute;
+    bottom: 10px; /* smaller footer */
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .dot.active {
+    background: rgba(0,0,0,0.7);
+  }
+
+</style>
+</head>
+<body>
+
+<img src="logo.png" alt="Logo" class="logo">
+
+<div class="slider">
+  <!-- Slide 1 -->
+  <div class="slide active">
+    <img src="0.1.png" alt="Introduction to Environmental Science">
+    <div class="title">Introduction to Environmental Science</div>
+    <div class="caption">
+      A vivid image contrasts a lush natural landscape with a sustainable futuristic city. The glowing Earth emphasizes our shared responsibility for the planet. "The Earth is what we all have in common." – Wendell Berry.
+    </div>
+  </div>
+  <!-- Slide 2 -->
+  <div class="slide">
+    <img src="0.2.png" alt="What is Environmental Science?">
+    <div class="title">What is Environmental Science?</div>
+    <div class="caption">
+      A rainforest and modern city illustrate the balance between nature and humanity. Environmental Science studies how humans interact with the natural world. Is it about saving nature, or saving ourselves?
+    </div>
+  </div>
+  <!-- Slide 3 -->
+  <div class="slide">
+    <img src="0.3.png" alt="Why Does It Matter?">
+    <div class="title">Why Does It Matter?</div>
+    <div class="caption">
+      Key environmental concerns like climate change and air pollution are shown through engaging infographics. Clean water access and renewable energy highlight solutions. "We do not inherit the Earth from our ancestors, we borrow it from our children."
+    </div>
+  </div>
+  <!-- Slide 4 -->
+  <div class="slide">
+    <img src="0.4.png" alt="Human Impact: The Anthropocene">
+    <div class="title">Human Impact: The Anthropocene</div>
+    <div class="caption">
+      A before-and-after comparison shows deforestation and pollution versus a healthy forest. Humans are depicted as the dominant force shaping ecosystems. Should we see ourselves as conquerors of nature or caretakers of it?
+    </div>
+  </div>
+  <!-- Slide 5 -->
+  <div class="slide">
+    <img src="0.5.png" alt="The Big Questions of Environmental Science">
+    <div class="title">The Big Questions of Environmental Science</div>
+    <div class="caption">
+      A circular diagram connects planet, people, and prosperity. Arrows show how each affects the other. Core questions encourage students to reflect and participate in a poll.
+    </div>
+  </div>
+  <!-- Slide 6 -->
+  <div class="slide">
+    <img src="0.6.png" alt="Success Stories">
+    <div class="title">Success Stories</div>
+    <div class="caption">
+      Environmental victories like ozone recovery and whale conservation are showcased. Renewable energy farms and city recycling highlight sustainable solutions. "Never doubt that a small group of thoughtful, committed citizens can change the world."
+    </div>
+  </div>
+  <!-- Slide 7 -->
+  <div class="slide">
+    <img src="0.7.png" alt="The Future Is in Our Hands">
+    <div class="title">The Future Is in Our Hands</div>
+    <div class="caption">
+      Hands cradle the glowing Earth, listing challenges like climate change and biodiversity loss. A futuristic green city represents opportunities in innovation and global cooperation. Reflection prompts invite students to consider their role.
+    </div>
+  </div>
+  <!-- Slide 8 -->
+  <div class="slide">
+    <img src="0.8.png" alt="Environmental Science & You">
+    <div class="title">Environmental Science & You</div>
+    <div class="caption">
+      Icons show environmental careers and everyday actions impacting the planet. Students engage in outdoor and scientific activities. "The greatest threat to our planet is the belief that someone else will save it." – Robert Swan.
+    </div>
+  </div>
+  <!-- Slide 9 -->
+  <div class="slide">
+    <img src="0.9.png" alt="Closing Thought">
+    <div class="title">Closing Thought</div>
+    <div class="caption">
+      A sunrise over a serene forest and river inspires reflection. The peaceful scene emphasizes natural beauty. Students are asked: "What kind of planet do you want to leave behind for the next generation?"
+    </div>
+  </div>
+  <!-- Slide 10 -->
+  <div class="slide">
+    <img src="0.10.png" alt="Discussion / Exit Ticket">
+    <div class="title">Discussion / Exit Ticket</div>
+    <div class="caption">
+      A chalkboard-style slide presents two clear prompts. Students explore deeper ecological principles. They also plan actionable steps to create real-world impact.
+    </div>
+  </div>
+
+  <!-- Dot indicators -->
+  <div class="dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+    <span class="dot" onclick="goToSlide(4)"></span>
+    <span class="dot" onclick="goToSlide(5)"></span>
+    <span class="dot" onclick="goToSlide(6)"></span>
+    <span class="dot" onclick="goToSlide(7)"></span>
+    <span class="dot" onclick="goToSlide(8)"></span>
+    <span class="dot" onclick="goToSlide(9)"></span>
+  </div>
+
+  <!-- Navigation buttons -->
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">Prev</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  let currentIndex = 0;
+  let autoSlide;
+
+  function showSlide(index) {
+    slides.forEach((s,i)=> {
+      s.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentIndex = index;
+  }
+
+  function nextSlide() {
+    let next = (currentIndex + 1) % slides.length;
+    showSlide(next);
+  }
+
+  function prevSlide() {
+    let prev = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(prev);
+  }
+
+  function goToSlide(index) {
+    showSlide(index);
+  }
+
+  function startAutoSlide() {
+    autoSlide = setInterval(nextSlide, 10000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlide);
+  }
+
+  startAutoSlide();
+
+  document.querySelector('.slider').addEventListener('mouseenter', stopAutoSlide);
+  document.querySelector('.slider').addEventListener('mouseleave', startAutoSlide);
+
+  document.addEventListener('keydown', e => {
+    if(e.key === "ArrowRight") nextSlide();
+    if(e.key === "ArrowLeft") prevSlide();
+  });
+</script>
+
+</body>
+</html>
